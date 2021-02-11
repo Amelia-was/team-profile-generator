@@ -4,6 +4,8 @@ const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const pageTemplate = require('./src/template.js');
+//const { generate } = require('rxjs');
+const generatePage = require('./src/generate-page.js');
 
 const employees = [];
 
@@ -59,16 +61,16 @@ const promptManager = () => {
                     }])
                     .then(({ whichEmployee }) => {
                         if (whichEmployee === 'Engineer') {
-                            promptEngineer();
+                            return promptEngineer();
                         }
                         else {
-                            promptIntern();
+                            return promptIntern();
                         }
                     })
             }
             else {
                 console.log('✶ Team Profile Complete! ✶');
-                pageTemplate(employees);
+                return employees;
             }
         })
 }
@@ -115,16 +117,16 @@ const promptEngineer = () => {
                     }])
                     .then(({ whichEmployee }) => {
                         if (whichEmployee === 'Engineer') {
-                            promptEngineer();
+                            return promptEngineer();
                         }
                         else {
-                            promptIntern();
+                            return promptIntern();
                         }
                     })
             }
             else {
                 console.log('✶ Team Profile Complete! ✶');
-                pageTemplate(employees);
+                return employees;
             }
         })
 }
@@ -171,18 +173,19 @@ const promptIntern = () => {
                     }])
                     .then(({ whichEmployee }) => {
                         if (whichEmployee === 'Engineer') {
-                            promptEngineer();
+                            return promptEngineer();
                         }
                         else {
-                            promptIntern();
+                            return promptIntern();
                         }
                     })
             }
             else {
-                console.log('✶ Team Profile Complete! ✶');
-                pageTemplate(employees);
+                return employees;
             }
         })
 }
 
-promptManager();
+promptManager()
+    .then(data => pageTemplate(data))
+    .then(content => generatePage(content));
