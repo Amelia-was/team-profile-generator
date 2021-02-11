@@ -3,17 +3,18 @@ const Employee = require('./lib/Employee.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
+const pageTemplate = require('./src/template.js');
 
 const employees = [];
 
 // prompt user for team members
 const promptManager = () => {
     console.log(`
-╔══════════════╗
-
-Create your team
-
-╚══════════════╝
+▫ ╔══════════════╗ ▫
+╔═╝              ╚═╗
+║ Create your team ║
+╚═╗              ╔═╝
+▫ ╚══════════════╝ ▫
 `);
     return inquirer
         .prompt([{
@@ -47,14 +48,27 @@ Create your team
             let employee = new Manager(name, id, email, officeNumber);
             employees.push(employee);
             //console.log(employees);
+            // if user chooses to enter another employee
             if (confirmAddEmployee) {
-                // console.log(employees);
-                // console.log('Let\'s add another employee!');
-                promptEngineer();
+                return inquirer
+                    .prompt([{
+                        type: 'list',
+                        name: 'whichEmployee',
+                        message: 'Please choose an employee to add to your team.',
+                        choices: ['Engineer', 'Intern']
+                    }])
+                    .then(({ whichEmployee }) => {
+                        if (whichEmployee === 'Engineer') {
+                            promptEngineer();
+                        }
+                        else {
+                            promptIntern();
+                        }
+                    })
             }
             else {
-                console.log(employees);
-                console.log('No more employees!');
+                console.log('✶ Team Profile Complete! ✶');
+                pageTemplate(employees);
             }
         })
 }
@@ -90,15 +104,27 @@ const promptEngineer = () => {
         .then(({ name, id, email, github, confirmAddEmployee }) => {
             let employee = new Engineer(name, id, email, github);
             employees.push(employee);
-            //console.log(employees);
+            // //console.log(employees);
             if (confirmAddEmployee) {
-                // console.log(employees);
-                // console.log('Let\'s add another employee!');
-                promptIntern();
+                return inquirer
+                    .prompt([{
+                        type: 'list',
+                        name: 'whichEmployee',
+                        message: 'Please choose an employee to add to your team.',
+                        choices: ['Engineer', 'Intern']
+                    }])
+                    .then(({ whichEmployee }) => {
+                        if (whichEmployee === 'Engineer') {
+                            promptEngineer();
+                        }
+                        else {
+                            promptIntern();
+                        }
+                    })
             }
             else {
-                console.log(employees);
-                console.log('No more employees!');
+                console.log('✶ Team Profile Complete! ✶');
+                pageTemplate(employees);
             }
         })
 }
@@ -134,14 +160,27 @@ const promptIntern = () => {
         .then(({ name, id, email, school, confirmAddEmployee }) => {
             let employee = new Intern(name, id, email, school);
             employees.push(employee);
-            //console.log(employees);
+            // //console.log(employees);
             if (confirmAddEmployee) {
-                console.log(employees);
-                console.log('Let\'s add another employee!');
+                return inquirer
+                    .prompt([{
+                        type: 'list',
+                        name: 'whichEmployee',
+                        message: 'Please choose an employee to add to your team.',
+                        choices: ['Engineer', 'Intern']
+                    }])
+                    .then(({ whichEmployee }) => {
+                        if (whichEmployee === 'Engineer') {
+                            promptEngineer();
+                        }
+                        else {
+                            promptIntern();
+                        }
+                    })
             }
             else {
-                console.log(employees);
-                console.log('No more employees!');
+                console.log('✶ Team Profile Complete! ✶');
+                pageTemplate(employees);
             }
         })
 }
