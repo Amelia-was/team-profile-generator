@@ -69,7 +69,6 @@ const promptManager = () => {
                     })
             }
             else {
-                console.log('✶ Team Profile Complete! ✶');
                 return employees;
             }
         })
@@ -125,7 +124,6 @@ const promptEngineer = () => {
                     })
             }
             else {
-                console.log('✶ Team Profile Complete! ✶');
                 return employees;
             }
         })
