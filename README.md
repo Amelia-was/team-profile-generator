@@ -6,7 +6,8 @@
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Questions](#questions)
-4. [License](#license)
+4. [Tests](#tests)
+5. [License](#license)
 
 
 ## Installation
@@ -26,7 +27,7 @@ To use this app, you must have [node.js](https://nodejs.org/en/) installed. A ba
 
 ## Usage
 1. In the root directory of the app, begin creating your team profile by entering `node index.js` in the command line.
-2. Answer the prompts.
+2. Answer the prompts. You may add as many employees as you wish.
 3. Once all the prompts have been answered, your team profile can be found in the '/dist' folder. You may navigate to it in the command line from the root directory of the app by entering:
 `cd dist` 
 `open my-team.html`
@@ -34,7 +35,7 @@ To use this app, you must have [node.js](https://nodejs.org/en/) installed. A ba
 A video walkthrough of the app can be viewed [here](https://drive.google.com/file/d/1m37EWMxdWuJBLAVo5Sxwwz6Bf7nSjI_f/view?usp=sharing).
 
 ## Tests
-
+To run unit tests, navigate to the root directory of the app and enter `npm run test` in the command line.
 
 ## Questions
 For additional questions, contact Amelia:
