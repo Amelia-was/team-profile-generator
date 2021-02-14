@@ -12,11 +12,11 @@ const employees = [];
 // prompt user for team members
 const promptManager = () => {
     console.log(`
-▫ ╔══════════════╗ ▫
-╔═╝              ╚═╗
-║ Create your team ║
-╚═╗              ╔═╝
-▫ ╚══════════════╝ ▫
+▫ ╔═══════════════╗ ▫
+╔═╝               ╚═╗
+║ Your team profile ║
+╚═╗               ╔═╝
+▫ ╚═══════════════╝ ▫
 `);
     return inquirer
         .prompt([{

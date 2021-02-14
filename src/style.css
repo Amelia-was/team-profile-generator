@@ -59,7 +59,7 @@ h5 {
 /* icons */
 i {
     font-size: 18px;
-    color: #b8899a;
+    color: #668a89;
 }
 
 h4 i {
@@ -96,7 +96,7 @@ a, a:visited {
 }
 
 a:hover {
-    color: #b8899a;
+    color: #668a89;
     text-decoration: none;
     transition: all 1s ease;
 }
