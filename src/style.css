@@ -32,7 +32,6 @@ h1 {
     margin: 0;
 }
 
-
 /* headings */
 h4 {
     font-style: italic;
@@ -49,6 +48,12 @@ h5 {
 /* container */
 .grid-lg, .container {
     padding: 0;
+    margin: 0 auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
 }
 
 /* icons */
@@ -94,12 +99,4 @@ a:hover {
     color: #b8899a;
     text-decoration: none;
     transition: all 1s ease;
-}
-
-/* media queries */
-@media only screen and (max-width: 960px) {
-    .center {
-        display: flex;
-        justify-content: center;
-    }
 }

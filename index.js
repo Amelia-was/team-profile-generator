@@ -5,7 +5,7 @@ const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const pageTemplate = require('./src/template.js');
 //const { generate } = require('rxjs');
-const generatePage = require('./src/generate-page.js');
+const { generatePage, copyCSS } = require('./src/generate-page.js');
 
 const employees = [];
 
@@ -186,4 +186,5 @@ const promptIntern = () => {
 
 promptManager()
     .then(data => pageTemplate(data))
-    .then(content => generatePage(content));
+    .then(content => generatePage(content))
+    .then(copyCSS());
