@@ -2,6 +2,8 @@
 
 ## Description
 
+![Page screenshot](./assets/images/page-screenshot.png)
+
 # Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
@@ -34,13 +36,22 @@ To use this app, you must have [node.js](https://nodejs.org/en/) installed. A ba
 
 A video walkthrough of the app can be viewed [here](https://drive.google.com/file/d/1m37EWMxdWuJBLAVo5Sxwwz6Bf7nSjI_f/view?usp=sharing).
 
-## Tests
-To run unit tests, navigate to the root directory of the app and enter `npm run test` in the command line.
+## Tests'
+Tests were created using [Jest](https://jestjs.io). To run unit tests, navigate to the root directory of the app and enter `npm run test` in the command line.
 
 ## Questions
 For additional questions, contact Amelia:
 
 GitHub: [amelia-was](https://github.com/amelia-was)
+
+## Built Using
+- HTML
+- CSS
+- Spectre.css
+- JavaScript
+- Node.js
+- Inquirer
+- Jest.js
 
 ## License
 Under the MIT license, this material is free to modify and distribute for commercial or private use. See [here](https://opensource.org/licenses/MIT) for more details.
