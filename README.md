@@ -2,6 +2,16 @@
 
 ## Description
 
+A team profile generator. On installation, the user may navigate to the command line and answer a series of prompts about their employees and a professional-quality team profile HTML page is generated. The generated team profile contains information for each employee, including their ID and email, in addition to the following:
+
+*For managers*: the employee's office number
+
+*For engineers*: the employee's github URL
+
+*For interns*: the employee's current school
+
+A sample team profile created with the app can be found [here](./Sample/my-team.html).
+
 ![Page screenshot](./assets/images/page-screenshot.png)
 
 # Table of Contents
@@ -36,7 +46,7 @@ To use this app, you must have [node.js](https://nodejs.org/en/) installed. A ba
 
 A video walkthrough of the app can be viewed [here](https://drive.google.com/file/d/1m37EWMxdWuJBLAVo5Sxwwz6Bf7nSjI_f/view?usp=sharing).
 
-## Tests'
+## Tests
 Tests were created using [Jest](https://jestjs.io). To run unit tests, navigate to the root directory of the app and enter `npm run test` in the command line.
 
 ## Questions

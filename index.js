@@ -4,7 +4,6 @@ const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const pageTemplate = require('./src/template.js');
-//const { generate } = require('rxjs');
 const { generatePage, copyCSS } = require('./src/generate-page.js');
 
 const employees = [];
@@ -49,7 +48,6 @@ const promptManager = () => {
         .then(({ name, id, email, officeNumber, confirmAddEmployee }) => {
             let employee = new Manager(name, id, email, officeNumber);
             employees.push(employee);
-            //console.log(employees);
             // if user chooses to enter another employee
             if (confirmAddEmployee) {
                 return inquirer
@@ -105,7 +103,7 @@ const promptEngineer = () => {
         .then(({ name, id, email, github, confirmAddEmployee }) => {
             let employee = new Engineer(name, id, email, github);
             employees.push(employee);
-            // //console.log(employees);
+            // if user chooses to add another employee
             if (confirmAddEmployee) {
                 return inquirer
                     .prompt([{
@@ -160,7 +158,7 @@ const promptIntern = () => {
         .then(({ name, id, email, school, confirmAddEmployee }) => {
             let employee = new Intern(name, id, email, school);
             employees.push(employee);
-            // //console.log(employees);
+            // if user chooses to add another employee
             if (confirmAddEmployee) {
                 return inquirer
                     .prompt([{

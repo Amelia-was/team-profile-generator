@@ -1,8 +1,8 @@
 const Manager = require('../lib/Manager.js');
 const Engineer = require('../lib/Engineer.js');
 const Intern = require('../lib/Intern.js');
-const generatePage = require('./generate-page.js');
 
+// html page template
 const pageTemplate = employeesArr => {
     return `<!DOCTYPE html>
 <html lang="en">
@@ -74,7 +74,7 @@ ${employeesArr
             <i class="fas fa-envelope"></i>
             <h5><a href="mailto:${email}">${email}</a></h5>
             <i class="fab fa-github"></i>
-            <h5><a href='https://github.com/${github}'>${github}</a></h5>
+            <h5><a href='https://github.com/${github}' target='_blank'>${github}</a></h5>
 
           </div>
         </div>
@@ -118,6 +118,5 @@ ${employeesArr
 </body>
 </html>`
 }
-
 
 module.exports = pageTemplate;

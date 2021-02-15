@@ -1,6 +1,7 @@
 const fs = require('fs');
 const pageTemplate = require('./template.js');
 
+// generate HTML with user input
 const generatePage = content => {
     fs.writeFile('./dist/my-team.html', content, err => {
         if (err) throw err;
@@ -8,6 +9,7 @@ const generatePage = content => {
     });
 };
 
+// copy css file
 const copyCSS = file => {
     let dir = './dist';
 
