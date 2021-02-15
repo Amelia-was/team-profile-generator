@@ -10,7 +10,7 @@ A team profile generator. On installation, the user may navigate to the command 
 
 *For interns*: the employee's current school
 
-A sample team profile created with the app can be found [here](./Sample/my-team.html).
+A sample team profile created with the app can be found [here](https://amelia-was.github.io/team-profile-generator/).
 
 ![Page screenshot](./assets/images/page-screenshot.png)
 
