@@ -6,6 +6,10 @@ const Intern = require('./lib/Intern.js');
 const pageTemplate = require('./src/template.js');
 const { generatePage, copyCSS } = require('./src/generate-page.js');
 
+// check if string contains a letter
+const regExp = /[a-zA-Z]/g;
+// check if string is in email format
+const regExpEmail = /\S+@\S+\.\S+/;
 const employees = [];
 
 // prompt user for team members
@@ -21,22 +25,54 @@ const promptManager = () => {
         .prompt([{
             type: 'text',
             name: 'name',
-            message: 'Please enter your manager\'s name'
+            message: 'Please enter your manager\'s name',
+            validate: nameInput => {
+                if (!regExp.test(nameInput)) {
+                    return 'Please enter a valid name.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'id',
-            message: 'Please enter your manager\'s ID'
+            message: 'Please enter your manager\'s ID',
+            validate: idInput => {
+                if (!idInput || isNaN(idInput)) {
+                    return 'Please enter a valid ID.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'email',
-            message: 'Please enter your manager\'s email'
+            message: 'Please enter your manager\'s email',
+            validate: emailInput => {
+                if (!regExpEmail.test(emailInput)) {
+                    return 'Please enter a valid email.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'officeNumber',
-            message: 'Please enter your manager\'s office number'
+            message: 'Please enter your manager\'s office number',
+            validate: numberInput => {
+                if (!numberInput || isNaN(numberInput)) {
+                    return 'Please enter a valid number.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'confirm',
@@ -77,22 +113,54 @@ const promptEngineer = () => {
         .prompt([{
             type: 'text',
             name: 'name',
-            message: 'Please enter your engineer\'s name'
+            message: 'Please enter your engineer\'s name',
+            validate: nameInput => {
+                if (!regExp.test(nameInput)) {
+                    return 'Please enter a valid name.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'id',
-            message: 'Please enter your engineer\'s ID'
+            message: 'Please enter your engineer\'s ID',
+            validate: idInput => {
+                if (!idInput || isNaN(idInput)) {
+                    return 'Please enter a valid ID.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'email',
-            message: 'Please enter your engineer\'s email'
+            message: 'Please enter your engineer\'s email',
+            validate: emailInput => {
+                if (!regExpEmail.test(emailInput)) {
+                    return 'Please enter a valid email.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'github',
-            message: 'Please enter your engineer\'s GitHub username'
+            message: 'Please enter your engineer\'s GitHub username',
+            validate: githubInput => {
+                if (!githubInput || githubInput.includes(' ')) {
+                    return 'Please enter a username.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'confirm',
@@ -132,22 +200,54 @@ const promptIntern = () => {
         .prompt([{
             type: 'text',
             name: 'name',
-            message: 'Please enter your intern\'s name'
+            message: 'Please enter your intern\'s name',
+            validate: nameInput => {
+                if (!regExp.test(nameInput)) {
+                    return 'Please enter a valid name.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'id',
-            message: 'Please enter your intern\'s ID'
+            message: 'Please enter your intern\'s ID',
+            validate: idInput => {
+                if (!idInput || isNaN(idInput)) {
+                    return 'Please enter a valid ID.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'email',
-            message: 'Please enter your intern\'s email'
+            message: 'Please enter your intern\'s email',
+            validate: emailInput => {
+                if (!regExpEmail.test(emailInput)) {
+                    return 'Please enter a valid email.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'text',
             name: 'school',
-            message: 'Please enter your intern\'s school'
+            message: 'Please enter your intern\'s school',
+            validate: schoolInput => {
+                if (!regExp.test(schoolInput)) {
+                    return 'Please enter a valid school.';
+                }
+                else {
+                    return true;
+                }
+            }
         },
         {
             type: 'confirm',
